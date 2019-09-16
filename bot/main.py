@@ -163,7 +163,7 @@ def chanel_photo_handler(msg):
 		mark = download_file(info.photo_id)
 
 	photo = editor.edit_photo(info, file, mark)
-	edit_media(msg, InputMediaPhoto(photo.getvalue(), caption = msg.caption), info)
+	edit_media(msg, InputMediaPhoto(photo.getvalue(), caption = msg.html_caption), info)
 	db.new_edit_post(info.id, info.user_id)
 
 @bot.channel_post_handler(content_types = ['video','document'])
