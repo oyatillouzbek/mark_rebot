@@ -79,8 +79,9 @@ class Private(object):
         
         try:
             msg = self.bot.send_message(username_ch, 'Hello:)')
-        except: 
+        except Exception as e:    
             txt_error = ru['channel_no_exist']
+            print(f'Error add chanel: {e} txterror {txt_error}')
         else:
             self.bot.delete_message(username_ch, msg.message_id)
             ch_ids = self.db.get_channel_id(user_id)
