@@ -1,4 +1,4 @@
-print('Starting..')
+print('Starting...')
 from pprint import pprint
 import uuid
 import os
